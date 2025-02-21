@@ -1,0 +1,35 @@
+server.js`**: Implements the web server using Express, handling CORS and parsing incoming requests. It includes routes for serving the main HTML file and processing user questions. 
+- **`index.html`**: Serves as the main user interface, allowing users to input math questions and view answers. It includes Bootstrap for styling and JavaScript for handling form submission and displaying responses. 
+ 
+## Features 
+ 
+- Users can input mathematical questions and receive immediate answers. 
+- The application processes questions using a simple evaluation mechanism. 
+- An "Exit" button allows users to exit the application with an alert notification. 
+- The interface is responsive and user-friendly, designed with Bootstrap. 
+ 
+## Getting started 
+ 
+### Requirements 
+ 
+- Node.js: A JavaScript runtime for building applications. 
+- MongoDB: A NoSQL database (optional; can use MongoDB Atlas for cloud storage). 
+- Required npm packages: 
+  - express 
+  - body-parser 
+  - cors 
+ 
+### Quickstart 
+ 
+1. **Install Node.js** if it is not already installed on your computer. 
+2. **Install the required npm packages** by running the following commands in your terminal: 
+   ```bash 
+   npm install express 
+   npm install body-parser 
+   npm install cors 
+   ``` 
+3. **Run the server** by executing the following command in your terminal: 
+   ```bash 
+   node server.js 
+   ``` 
+4. **Open your web browser** and navigate to `http://localhost:3000

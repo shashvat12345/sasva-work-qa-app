@@ -1,0 +1,51 @@
+<!-- index.html --> 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
+    <title>QaApp</title> 
+</head> 
+<body> 
+    <div class="container mt-5"> 
+        <h1>Ask a Math Question</h1> 
+        <form id="questionForm"> 
+            <div class="form-group"> 
+                <input type="text" class="form-control" id="question" placeholder="Enter your question" required> 
+            </div> 
+            <button type="submit" class="btn btn-primary">Submit</button> 
+            <button type="button" id="exitButton" class="btn btn-danger">Exit</button> 
+        </form> 
+        <div id="response" class="mt-3"></div> 
+    </div> 
+ 
+    <script> 
+        document.getElementById('questionForm').addEventListener('submit', function(event) { 
+            event.preventDefault(); 
+            const question = document.getElementById('question').value; 
+ 
+            fetch('/ask', { 
+                method: 'POST', 
+                headers: { 
+                    'Content-Type': 'application/json' 
+                }, 
+                body: JSON.stringify({ question }) 
+            }) 
+            .then(response => response.json()) 
+            .then(data => { 
+                document.getElementById('response').innerText = `Answer: ${data.answer}`; 
+                document.getElementById('question').value = ''; 
+            }) 
+            .catch(error => { 
+                console.error('Error:', error); // Log any errors that occur during the fetch 
+            }); 
+        }); 
+ 
+        document.getElementById('exitButton').addEventListener('click', function() { 
+            alert('Exiting the application.'); 
+            // You can implement additional logic to stop the app if needed 
+        }); 
+    </script> 
+</body> 
+</html> 

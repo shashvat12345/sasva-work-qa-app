@@ -1,0 +1,1 @@
+create a simple webapp that allows user to type in a simple mathematics related question and click on "submit" button and the application should respond with an answer on the same page. User would continue to ask more questions and seek answers until user clicks "Exit" button to stop this. Application can stop running when user clicks on "Exit" button.
